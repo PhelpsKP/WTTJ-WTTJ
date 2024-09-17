@@ -1,0 +1,437 @@
+body {
+   background-color: azure;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.wrapper {
+   background-color: white;
+}
+
+header {
+   background-color: #fb4f14;
+   padding: .5rem;
+   display: flex;
+   justify-content: space-between; /* Ensures spacing between logo and nav */
+   position: relative; 
+   height: 100vh; /* Keeps the header full-screen */
+   align-items: flex-start; /* Aligns nav and logo at the top */
+}
+
+header h1 {
+   position: absolute;
+   top: 1rem;
+   left: 1rem;
+   min-width: 10rem;
+   max-width: 15rem;
+   filter: drop-shadow(5px 5px 5px black);
+   z-index: 2;
+   opacity: 0.7;
+}
+
+
+.site-name {
+   padding-left: 10rem;
+   padding-top: 2rem;
+   padding-bottom: .5rem;
+   max-width: 35rem;
+   font-family: 'Special Elite', sans-serif;
+   z-index: 2; /* Ensures the site name is above the video */
+}
+
+header h2 {
+   display: flex;
+   justify-content: center;
+   font-size: 8rem;
+   text-shadow: 2px 2px 8px darkslategray;
+   border-bottom: 3px solid darkslategray;
+   padding-bottom: .2rem;
+   z-index: 2;
+}
+
+header h3 {
+   display: flex;
+   justify-content: center;
+   padding-left: .8rem;
+   padding-top: 2rem;
+   font-size: 4rem;
+   text-shadow: 2px 2px 8px black;
+   color: whitesmoke;
+   line-height: 4rem;
+   z-index: 2;
+}
+
+h4 {
+   font-size: 2rem;
+   color: whitesmoke;
+   white-space: nowrap;
+   max-margin-left: 5rem;
+   font-style: italic;
+   text-shadow: 2px 2px 8px darkslategray;
+   padding-top: 12rem;
+   padding-left: 5rem;
+   font-family: 'Special Elite', sans-serif;
+   z-index: 2;
+}
+
+/* Video container styling */
+.video-container {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   z-index: 1; /* Ensures the video stays behind the content */
+}
+
+.video-container iframe {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 100vw; /* Full width of the viewport */
+   height: 100vh; /* Full height of the viewport */
+   transform: translate(-50%, -50%) scale(1.2); /* Centers and slightly scales the video */
+   pointer-events: none; /* Makes the video unclickable */
+   border: none; /* Removes any default border */
+}
+
+
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+nav {
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   z-index: 2;
+   text-transform: uppercase;
+   background-color: transparent; /* No background in header */
+   text-shadow: 1px 1px 3px whitesmoke;
+}
+
+nav ul {
+   display: flex;
+   justify-content: flex-end; /* Align nav items to the right */
+   align-items: center;
+   padding: 0; /* Remove padding for smaller size */
+   margin: 0;
+   list-style-type: none;;
+}
+
+nav a {
+   text-decoration: none;
+   font-size: 1.5rem; /* Smaller text */
+   font-weight: bold;
+   color: black;
+   padding: 0.5rem 1rem; /* Smaller padding */
+   color: var(--white);
+    display: block;
+    pointer-events: auto;
+    transition: opacity 1s var(--expo-out);
+}
+
+nav a:hover {
+   background-color: black;
+   opacity: 0.8;
+   color: white;
+   text-shadow: 3px 3px 5px #fb4f14;
+   border-radius: 2rem;
+}
+
+main {
+   display: grid;
+   grid-template-columns: 3fr 1fr;
+   grid-gap: 1rem;
+   font-size: 125%;
+   line-height: 1.4;
+}
+
+.left-column {
+   font-size: 140%;
+   line-height: 1.4;
+   padding: 1rem 2rem;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.right-column h2 {
+   display: flex;
+   justify-content: flex-start;
+   font-size: 1.7rem;
+   padding-bottom: 10px;
+   margin-bottom: 0;
+   color: black;
+   text-shadow: 0px 0px 6px whitesmoke;
+   border-bottom: 2px solid white;
+   padding-bottom: 1rem;
+}
+
+.right-column {
+   background-color: #348c31;
+   box-shadow: inset 2px 2px 50px whitesmoke;
+   border-radius: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   text-align: center;
+   margin: 1rem 1rem 1rem 1rem;
+   padding: 20px;
+   border: 10px solid black;
+}
+
+.right-column div {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: space-between;
+   min-height: 85%;
+}
+
+.right-column figure {
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   border-bottom: 2px solid white;
+   width: 100%;
+}
+
+.right-column figcaption {
+   color: whitesmoke;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+
+.left-column h2 {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 2.5rem;
+   color: black;
+   border-bottom: 1px solid #fb4f14;
+}
+
+footer {
+   background-color: lightgrey;
+   color: black;
+   display: flex;
+   padding: 2rem 1em;
+   font-size: 90%;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   box-sizing: border-box;
+   overflow: hidden;
+ }
+ 
+ .footer-container {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   width: 100%;
+ }
+ 
+ .footer-left,
+ .footer-center,
+ .footer-right {
+   display: flex;
+   align-items: center;
+ }
+ 
+ .footer-right {
+   margin-left: 1rem; /* Adjust as needed */
+ }
+ 
+ /* Optional: Adjust spacing between icons */
+ .footer-center a {
+   margin: 0 0.5rem;
+ }
+
+footer a {
+   color: black;
+   font-size: 150%;
+   width: 11rem;
+   text-align: center;
+   display: inline-block;
+   text-decoration: none;
+}
+
+footer a:hover {
+   color: #fb4f14;
+   text-shadow: 0 0 5px black;
+}
+
+.email {
+   width: 2rem;
+}
+
+.video-gallery {
+   background-color: #f4f4f4;
+   padding: 2rem;
+   text-align: center;
+}
+
+.video-gallery h2 {
+   font-size: 2rem;
+   margin-bottom: 1rem;
+   color: #333;
+}
+
+.video-scroll {
+   display: flex;
+   overflow-x: auto;
+   gap: 1rem; /* Space between videos */
+   padding: 1rem;
+   scroll-behavior: smooth;
+}
+
+.video-item {
+   flex: 0 0 auto; /* Prevent flex item from shrinking */
+   width: 300px; /* Adjust width as needed */
+   height: 200px; /* Adjust height as needed */
+   background: #fff;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-item iframe {
+   width: 100%;
+   height: 100%;
+   border: none;
+}
+
+
+.image-container {
+   position: relative;
+   display: inline-block;
+   max-width: 100%;
+}
+
+.image-container img {
+   display: block;
+   width: 100%;
+   height: auto;
+   border-radius: 3rem;
+}
+
+.overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(128, 128, 128, 0.4); /* Darker gray overlay with 70% opacity for better contrast */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: black;
+   font-size: 20vh; /* Increased font size */
+   font-weight: bold;
+   text-shadow: 4px 4px 8px whitesmoke; /* Stronger text shadow for better contrast */
+   z-index: 1;
+   font-style: italic;
+   
+   border-radius: 3rem;
+}
+
+.overlay-text {
+   text-align: center;
+   padding: 1rem;
+   line-height: 1.2;
+   font-size: 9vw; /* Responsive font size based on viewport width */
+   max-font-size: 10rem; /* Maximum font size */
+}
+
+
+/* Base styles (for larger screens) */
+body {
+   font-size: 16px; /* Base font size for larger screens */
+}
+
+/* Styles for tablets (up to 768px wide) */
+@media (max-width: 768px) {
+   main {
+       display: block; /* Switch to a block layout */
+   }
+
+   .overlay-text {
+      font-size: 7vw; /* Adjust for tablets */
+      max-font-size: 8rem; /* Maximum font size for tablets */
+  }
+
+   .left-column,
+   .right-column {
+       margin: 0 auto; /* Center align columns */
+       padding: 1rem; /* Adjust padding */
+   }
+
+   .left-column {
+       margin-bottom: 1rem; /* Space between columns */
+   }
+
+   .right-column {
+       background-color: #348c31; /* Retain styling */
+       box-shadow: inset 2px 2px 50px whitesmoke; /* Retain styling */
+       border-radius: 30px; /* Retain styling */
+   }
+
+   .video-gallery {
+       padding: 1rem; /* Adjust padding */
+   }
+
+   .video-item {
+       width: 100%; /* Full width of parent container */
+       height: auto; /* Adjust height proportionally */
+   }
+
+   footer {
+       flex-direction: column; /* Stack footer items vertically */
+       align-items: center; /* Center align items */
+   }
+
+   footer a {
+       width: auto; /* Adjust link width */
+       font-size: 1.2rem; /* Adjust font size */
+   }
+}
+
+/* Styles for phones (up to 480px wide) */
+@media (max-width: 480px) {
+   main {
+       display: block; /* Ensure block layout */
+   }
+
+   .left-column,
+   .right-column {
+       font-size: 0.9rem; /* Smaller font size */
+       padding: 0.5rem; /* Adjust padding */
+   }
+
+   .right-column {
+       border: 3px solid black; /* Adjust border size */
+       margin: 0.25rem; /* Adjust margin */
+   }
+
+   .video-gallery {
+       padding: 0.5rem; /* Adjust padding */
+   }
+
+   .video-item {
+       width: 100%; /* Full width of parent container */
+       height: auto; /* Adjust height proportionally */
+   }
+
+   .overlay-text {
+      font-size: 10vw; /* Larger text size for phones */
+      max-font-size: 6rem; /* Maximum font size for phones */
+  }
+
+   footer {
+       font-size: 0.8rem; /* Smaller font size */
+   }
+
+   footer a {
+       font-size: 1rem; /* Smaller font size */
+   }
+}
