@@ -15,6 +15,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@yr/youtube-embed@1.1.1/lib/YTEmbed.js"></script>
   <script src="fancybox/jquery-3.3.1.min.js"></script>
   <script src="fancybox/fancybox.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="screen-overlay"></div>
@@ -52,7 +53,7 @@
     <!-- <li><a href="store.html">Store</a></li> To be built and finished later -->
     <li><a href="contact.html">Events</a></li>
     </ul>
-    </nav>
+  </nav>
 
   <main>
    <section class="left-column">
@@ -102,29 +103,25 @@
       </div>
   </main>
 
-  <section class="video-gallery">
-   <h2>Featured Videos</h2>
-   <div class="video-scroll">
-     <div class="video-item">
-       <iframe src="https://www.youtube.com/embed/BEo206xCMAE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-     </div>
-     <div class="video-item">
-       <iframe src="https://www.youtube.com/embed/ywcZ2aPCvZ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-     </div>
-     <div class="video-item">
-       <iframe src="https://www.youtube.com/embed/I4BRuuY-9pI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-     </div>
-     <div class="video-item">
-       <iframe src="https://www.youtube.com/embed/L-OR7iBHmPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-     </div>
-     <div class="video-item">
-       <iframe src="https://www.youtube.com/embed/uivGlk5Y5mE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-     </div>
-     <div class="video-item">
-       <iframe src="https://www.youtube.com/embed/vEO9pAlNDPo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-     </div>
-   </div>
- </section>
+<!-- Updated Video Gallery Section -->
+<section class="video-gallery-section">
+  <div class="container">
+    <div class="gallery-header">
+      <div class="gallery-subtitle">Videos</div>
+      <h2 class="gallery-title">Selected Work</h2>
+      <p class="gallery-description">
+        Our unique approach to creativity means that the worlds we build transcend the media they inhabit.
+      </p>
+    </div>
+    <div class="gallery-slider">
+      <button class="gallery-prev" aria-label="Previous slide" onclick="scrollGallery('prev')">‹</button>
+      <div class="slider-wrapper" id="sliderWrapper">
+        <!-- Video Items Populated Dynamically -->
+      </div>
+      <button class="gallery-next" aria-label="Next slide" onclick="scrollGallery('next')">›</button>
+    </div>
+  </div>
+</section>
 
   <footer>
     <div class="footer-container">
