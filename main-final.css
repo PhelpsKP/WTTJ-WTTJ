@@ -1,21 +1,47 @@
 body {
-   background-color: azure;
+   background-color: black;
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 16px;
 }
+
+.screen-overlay {
+   position: fixed; /* Make it cover the viewport */
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 9999; /* Ensure it's on top of everything */
+   background: url('images/Splash.png') center center / cover no-repeat; /* Image settings */
+   opacity: 1; /* Fully visible initially */
+   pointer-events: none; /* Disable interaction with the overlay */
+ }
+
+ body.loaded .screen-overlay {
+   animation: fadeOut 1s ease forwards;
+ }
+ 
+ @keyframes fadeOut {
+   to {
+     opacity: 0;
+     visibility: hidden; /* Hide the element after the fade-out */
+   }
+ }
+ 
 
 .wrapper {
    background-color: white;
 }
 
+/* Header */
 header {
    background-color: #fb4f14;
-   padding: .5rem;
+   padding: 0.5rem;
    display: flex;
-   justify-content: space-between; /* Ensures spacing between logo and nav */
-   position: relative; 
-   height: 100vh; /* Keeps the header full-screen */
-   align-items: flex-start; /* Aligns nav and logo at the top */
-}
+   justify-content: space-between;
+   align-items: flex-start;
+   position: relative;
+   height: 100vh;
+   }
 
 header h1 {
    position: absolute;
@@ -88,8 +114,8 @@ h4 {
    position: absolute;
    top: 50%;
    left: 50%;
-   width: 100vw; /* Full width of the viewport */
-   height: 100vh; /* Full height of the viewport */
+   width: 1920px; /* Original video width (example: Full HD) */
+   height: 1080px; /* Original video height (example: Full HD) */
    transform: translate(-50%, -50%) scale(1.2); /* Centers and slightly scales the video */
    pointer-events: none; /* Makes the video unclickable */
    border: none; /* Removes any default border */
@@ -102,44 +128,105 @@ img {
    height: auto;
 }
 
+/* Scroll Indicator Container */
+.scroll-indicator {
+   position: absolute;
+   bottom: 20px; /* Position near the bottom of the header */
+   left: 50%;
+   transform: translateX(-50%); /* Center horizontally */
+   text-align: center;
+   z-index: 10; /* Ensure it's above the video and other content */
+   font-family: Arial, sans-serif;
+   color: white;
+   font-size: 1.2rem;
+   text-shadow: 1px 1px 3px black;
+ }
+ 
+ /* Arrow Styling */
+ .scroll-indicator .arrow {
+   margin-top: 10px; /* Space between text and arrow */
+   width: 20px;
+   height: 20px;
+   border-left: 3px solid white;
+   border-bottom: 3px solid white;
+   transform: rotate(-45deg); /* Create the arrow shape */
+   animation: bounce 1.5s infinite ease-in-out;
+ }
+ 
+ /* Animation for Arrow */
+ @keyframes bounce {
+   0%, 100% {
+     transform: translate(-50%, 0) rotate(-45deg); /* Default position */
+   }
+   50% {
+     transform: translate(-50%, 10px) rotate(-45deg); /* Move down */
+   }
+ }
+
+/* Navbar */
 nav {
    position: absolute;
    top: 1rem;
    right: 1rem;
    z-index: 2;
    text-transform: uppercase;
-   background-color: transparent; /* No background in header */
-   text-shadow: 1px 1px 3px whitesmoke;
-}
-
-nav ul {
+   background-color: transparent;
+   }
+   
+   .nav-tray {
    display: flex;
-   justify-content: flex-end; /* Align nav items to the right */
-   align-items: center;
-   padding: 0; /* Remove padding for smaller size */
+   justify-content: center;
+   background: rgba(50, 50, 50, 0.2);
+   padding: 1rem;
+   border-radius: 12px;
+   box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.2);
+   backdrop-filter: blur(15px);
+   border-left: 2px solid #ccc;
+   border-right: 2px solid #ccc;
+   border-top: none;
+   border-bottom: none;
+   }
+   
+   .nav-tray ul,
+   nav ul {
+   list-style: none;
+   display: flex;
+   gap: 1.5rem;
+   padding: 0;
    margin: 0;
-   list-style-type: none;;
-}
-
-nav a {
-   text-decoration: none;
-   font-size: 1.5rem; /* Smaller text */
+   }
+   
+   .nav-tray a {
+   padding: 0.5rem 1rem;
+   color: #fb4f14;
+   text-shadow: 3px 3px 4px black;
    font-weight: bold;
-   color: black;
-   padding: 0.5rem 1rem; /* Smaller padding */
+   border: 1px solid rgba(255, 255, 255, 0.5);
+   border-radius: 8px;
+   transition: background-color 0.3s, color 0.3s;
+   text-decoration: none;
+   border-top: none;
+   border-bottom: none; 
+   }
+   
+   nav a {
+   font-size: 1.5rem;
+   font-weight: bold;
    color: var(--white);
-    display: block;
-    pointer-events: auto;
-    transition: opacity 1s var(--expo-out);
-}
-
-nav a:hover {
+   transition: opacity 1s var(--expo-out);
+   }
+   
+   nav a:hover {
    background-color: black;
    opacity: 0.8;
    color: white;
    text-shadow: 3px 3px 5px #fb4f14;
    border-radius: 2rem;
-}
+   }
+
+.hamburger-menu {
+   display: none; /* Hide the hamburger menu by default */
+ }
 
 main {
    display: grid;
@@ -147,6 +234,7 @@ main {
    grid-gap: 1rem;
    font-size: 125%;
    line-height: 1.4;
+   color: whitesmoke;
 }
 
 .left-column {
@@ -211,97 +299,82 @@ main {
    border-bottom: 1px solid #fb4f14;
 }
 
+/* Footer */
 footer {
    background-color: lightgrey;
    color: black;
    display: flex;
    padding: 2rem 1em;
-   font-size: 90%;
    width: 100%;
    justify-content: center;
    align-items: center;
    box-sizing: border-box;
-   overflow: hidden;
- }
- 
- .footer-container {
+   }
+   
+   .footer-container {
    display: flex;
-   justify-content: space-evenly;
+   justify-content: space-between;
    align-items: center;
    width: 100%;
- }
- 
- .footer-left,
- .footer-center,
- .footer-right {
-   display: flex;
-   align-items: center;
- }
- 
- .footer-right {
-   margin-left: 1rem; /* Adjust as needed */
- }
- 
- /* Optional: Adjust spacing between icons */
- .footer-center a {
-   margin: 0 0.5rem;
- }
-
-footer a {
+   }
+   
+   footer a {
    color: black;
    font-size: 150%;
-   width: 11rem;
    text-align: center;
-   display: inline-block;
    text-decoration: none;
-}
-
-footer a:hover {
+   }
+   
+   /* footer icons */
+   footer a i {
+   margin: 0 1.5rem;
+   }
+   
+   /* Size of footer icons */
+   .footer-center {
+   font-size: 2rem;
+   }
+   
+   footer a:hover {
    color: #fb4f14;
    text-shadow: 0 0 5px black;
-}
+   }
 
-.email {
-   width: 2rem;
-}
-
+/* Video Gallery */
 .video-gallery {
-   background-color: #f4f4f4;
+   background-color: black;
    padding: 2rem;
    text-align: center;
-}
-
+   max-width: 100%;
+   overflow: visible;
+   }
+   
 .video-gallery h2 {
    font-size: 2rem;
    margin-bottom: 1rem;
-   color: #333;
-}
-
+   color: white;
+   }
+   
 .video-scroll {
    display: flex;
    overflow-x: auto;
-   gap: 1rem; /* Space between videos */
+   gap: 1rem;
    padding: 1rem;
    scroll-behavior: smooth;
-}
-
+   white-space: nowrap;
+   }
+   
 .video-item {
-   flex: 0 0 auto; /* Prevent flex item from shrinking */
-   width: 300px; /* Adjust width as needed */
-   height: 200px; /* Adjust height as needed */
+   flex: 0 0 auto;
+   width: 300px;
+   height: 200px;
    background: #fff;
    border: 1px solid #ddd;
    border-radius: 8px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+   }
 
-.video-item iframe {
-   width: 100%;
-   height: 100%;
-   border: none;
-}
-
-
+/* Image Overlay */
 .image-container {
    position: relative;
    display: inline-block;
@@ -331,7 +404,6 @@ footer a:hover {
    text-shadow: 4px 4px 8px whitesmoke; /* Stronger text shadow for better contrast */
    z-index: 1;
    font-style: italic;
-   
    border-radius: 3rem;
 }
 
@@ -343,11 +415,69 @@ footer a:hover {
    max-font-size: 10rem; /* Maximum font size */
 }
 
-
-/* Base styles (for larger screens) */
-body {
-   font-size: 16px; /* Base font size for larger screens */
-}
+/* Responsive styles for screen widths below 930px */
+@media (max-width: 930px) {
+   /* Show Hamburger Menu */
+   .hamburger-menu {
+     display: block; /* Show the hamburger menu button */
+     font-size: 32px;
+     color: white;
+     background: none;
+     border: none;
+     cursor: pointer;
+     z-index: 1100; /* Ensure it's above everything */
+     position: absolute;
+     top: 20px;
+     right: 20px;
+   }
+ 
+   /* Hide Default Nav Bar */
+   nav ul {
+     display: none; /* Hide the default nav bar */
+   }
+ 
+   /* Full-Screen Mobile Menu */
+   .nav-links {
+     display: none; /* Hidden by default */
+     flex-direction: column; /* Stack links vertically */
+     align-items: center; /* Center horizontally */
+     justify-content: center; /* Center vertically */
+     background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
+     position: fixed; /* Cover the entire screen */
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     padding: 0;
+     z-index: 1000; /* Ensure it's above everything */
+   }
+ 
+   /* Show Menu When Open */
+   .nav-links.open {
+     display: flex; /* Show the mobile menu */
+   }
+ 
+   /* Mobile Nav Links */
+   .nav-links li {
+     list-style: none; /* Remove bullet points */
+     margin: 20px 0; /* Space between items */
+   }
+ 
+   .nav-links li a {
+     color: white; /* White text */
+     text-decoration: none; /* Remove underline */
+     font-size: 2rem; /* Larger text for mobile */
+     font-weight: bold;
+     text-transform: uppercase;
+     padding: 10px 20px;
+     transition: background-color 0.3s ease;
+   }
+ 
+   .nav-links li a:hover {
+     background-color: #fb4f14; /* Highlight link on hover */
+   }
+ }
+ 
 
 /* Styles for tablets (up to 768px wide) */
 @media (max-width: 768px) {
