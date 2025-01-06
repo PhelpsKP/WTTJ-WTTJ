@@ -1,146 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE-edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Welcome to the Jungle</title>
-      <link rel="stylesheet" href="reset.css">
-      <link rel="stylesheet" href="main-final.css">
-      <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="fancybox/fancybox.css">
-      <script src="fancybox/jquery-3.3.1.min.js"></script>
-      <script src="fancybox/fancybox.js"></script>
-   </head>
-   <body>
-   <div class="wrapper">
-      <header>
-         <h1>
-            <a class="logo" href="index.html">
-               <img alt="Home" src="images/logo.png"> 
-            </a>
-         </h1>
-         <div class="site-name">
-            <h2>WELCOME</h2>
-            <h3>TO THE JUNGLE</h3>
-         </div>
-         <h4>...with Kyle Phelps</h4>
-      </header>
-   </div>
-      <div class="home-nav">
-         <nav>
-            <ul>
-               <li><a href="wttj.html">The Show</a></li>
-               <li><a href="bohp.html">The Podcast</a></li>
-               <li><a href="support.html">Support</a></li>
-                  <!-- <li><a href="store.html">Store</a></li> -->
-                  <!-- For now, I'm getting rid of the Store page because the code for it would go a bit beyond the scope of this class. Luckily, there's still five total pages so it should still work for the final project -->
-               <li><a href="contact.html">Contact</a></li>
-            </ul>
-         </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to the Jungle</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main-final.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fancybox/fancybox.css">
+  <script src="https://cdn.jsdelivr.net/npm/@yr/youtube-embed@1.1.1/lib/YTEmbed.js"></script>
+  <script src="fancybox/jquery-3.3.1.min.js"></script>
+  <script src="fancybox/fancybox.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="screen-overlay"></div>
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a class="logo" href="index.html">
+          <img alt="Home" src="images/logo.png"> 
+        </a>
+      </h1>
+      <div class="video-container">
+        <iframe 
+  width="100%" 
+  height="100%" 
+  src="https://www.youtube.com/embed/rTckKvS-YcQ?autoplay=1&mute=1&loop=1&playlist=rTckKvS-YcQ&si=tTXkuN-q-cDGftH6" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
+
       </div>
-   <main>
-      <section class="left-column">
-         <h2>Welcome to the Jungle, everyone!</h2>
-         <p>I'm Kyle Phelps and the Bengals always find a way to make me miserable! That's why I started this show. You guys don't make me miserable. 31 NFL teams don't win the Super Bowl every year and coping with that is easier when you have people to laugh about it with. At Welcome to the Jungle, we've been all about cultivating that environment since 2020. </p>
-         <p>Check out some of the most popular videos below or head over to the <a href="https://www.youtube.com/@wttk">Youtube Channel</a> and join in on the chaos!</p>
-         <img src="images/Leadership.png" alt="Leadership">
-      </section>
+      <div class="scroll-indicator">
+        <div class="arrow"></div>
+      </div>
+    </header>
+  </div>
+   
+  <nav class="nav-tray">
+    <ul>
+    <li><a href="wttj.html">The Show</a></li>
+    <li><a href="bohp.html">The Podcast</a></li>
+    <li><a href="zone.html">Fan Zone</a></li>
+    <!-- <li><a href="store.html">Store</a></li> To be built and finished later -->
+    <li><a href="contact.html">Events</a></li>
+    </ul>
+  </nav>
 
-      <section class="right-column">
-         <h2>BEST COMMENTS</h2>
-         <div>
-            <figure>
-               <a href="images/Gungobang.png" class="fancybox" rel="gallery">
-                  <img src="images/Gungobang.png" alt="Gungobang" >
-               </a>
-               
-               <figcaption>
-                  -Def
+  <main>
+   <section class="left-column">
+      <div class="image-container">
+        <img src="images/kyle.png" alt="Welcome to the Jungle, Everyone!">
+        <div class="overlay">
+          <div class="overlay-text">Welcome to the Jungle, Everybody!</div>
+        </div>
+      </div>
+      <h2>Join our Community!</h2>
+      <p>This is a place by the fans, for the fans. Each week we take a look around the NFL and talk about how things are looking and how each team stacks up. There is a lot of absurdity in the NFL, which we love poking fun at. Whether it's reacting to the games live or overeacting to developments after the fact, we act like fans and we're damn proud of that.</p>
+      <p>Here on this website you can find the best ways to interact with the show and podcast, as well as ways to support what we're doing here. At the end of the day, though, the best way to support is simply to hang out and interact! At the end of the day, losing your mind over a football game is a lot more fun when we all do it together. See you on the other side.</p>
+    </section>
+    <section class="right-column">
+      <h2>BEST COMMENTS</h2>
+      <div>
+        <figure>
+          <a href="images/Gungobang.png" class="fancybox" rel="gallery">
+            <img src="images/Gungobang.png" alt="Gungobang" >
+          </a>
+          <figcaption>-Def</figcaption>
+        </figure>
+        <figure>
+          <a href="images/mikey.png" class="fancybox" rel="gallery">
+            <img src="images/mikey.png" alt="Hurricane Mike" >
+          </a>
+          <figcaption>-Hurricane Mike</figcaption>
+        </figure>
+        <figure>
+          <a href="images/justin.png" class="fancybox" rel="gallery">
+            <img src="images/justin.png" alt="Justin Carroll" >
+          </a>
+          <figcaption>-Justin Carroll</figcaption>
+        </figure>
+        <figure>
+          <a href="images/brandon.png" class="fancybox" rel="gallery">
+            <img src="images/brandon.png" alt="Brandon R" >
+          </a>
+          <figcaption>-Brandon R</figcaption>
+        </figure>
+        <figure>
+          <a href="images/ethan.png" class="fancybox" rel="gallery">
+            <img src="images/ethan.png" alt="Ethan Bruley8858" >
+          </a>
+          <figcaption>-Def</figcaption>
+        </figure>
+      </div>
+  </main>
 
-               </figcaption>
-            </figure>
-               <figure>
-                  <a href="images/mikey.png" class="fancybox" rel="gallery">
-                     <img src="images/mikey.png" alt="Hurricane Mike" >
-                  </a>
-                  
-                  <figcaption>
-                     -Hurricane Mike
+<!-- Updated Video Gallery Section -->
+<section class="video-gallery-section">
+  <div class="container">
+    <div class="gallery-header">
+      <div class="gallery-subtitle">Videos</div>
+      <h2 class="gallery-title">Selected Work</h2>
+      <p class="gallery-description">
+        Our unique approach to creativity means that the worlds we build transcend the media they inhabit.
+      </p>
+    </div>
+    <div class="gallery-slider">
+      <button class="gallery-prev" aria-label="Previous slide" onclick="scrollGallery('prev')">‹</button>
+      <div class="slider-wrapper" id="sliderWrapper">
+        <!-- Video Items Populated Dynamically -->
+      </div>
+      <button class="gallery-next" aria-label="Next slide" onclick="scrollGallery('next')">›</button>
+    </div>
+  </div>
+</section>
 
-                  </figcaption>
-            </figure>
-            
-            <figure>
-               <a href="images/justin.png" class="fancybox" rel="gallery">
-                  <img src="images/justin.png" alt="Justin Carroll" >
-               </a>
-               
-               <figcaption>
-                  -Justin Carroll
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="mailto:wttjshow@gmail.com">	✉ Business Inquiries</a>
+      </div>
+      <div class="footer-center">
+        <a href="http://www.instagram.com/urbanlegendphelps">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a href="http://www.youtube.com/@WTTJ">
+          <i class="fa fa-youtube"></i>
+        </a>
+        <a href="http://www.twitter.com/@kylephelps92">
+          <i class="fa fa-twitter"></i>
+        </a>
+      </div>
+      <div class="footer-right">
+        © Copyright Grogtame Productions 2025
+      </div>
+    </div>
+  </footer>
 
-               </figcaption>
-            </figure>
-            
-            <figure>
-               <a href="images/brandon.png" class="fancybox" rel="gallery">
-                  <img src="images/brandon.png" alt="Brandon R" >
-               </a>
-               
-               <figcaption>
-                  -Brandon R
-
-               </figcaption>
-            </figure>
-            <figure>
-               <a href="images/ethan.png" class="fancybox" rel="gallery">
-                  <img src="images/ethan.png" alt="Ethan Bruley8858" >
-               </a>
-               
-               <figcaption>
-                  -Def
-
-               </figcaption>
-            </figure>
-         </div>
-      </section>
-      <section class="videos">
-         <iframe width="280" height="auto" src="https://www.youtube.com/embed/H_jzzt35oas?si=mQTj9OimKtSx0bPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-         <iframe width="280" height="auto" src="https://www.youtube.com/embed/NuEoFuwTE9w?si=073qEGn9aRz0Zsb5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-         <iframe width="280" height="auto" src="https://www.youtube.com/embed/2eCDBHDMLbc?si=l48j_peCQRiSDbmh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-         <iframe width="280" height="auto" src="https://www.youtube.com/embed/sk3ffFS4HSg?si=VBv--B50miMCjBxT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-         
-      </section>
-   </main>
-   <footer>
-      © Copyright Grogtame Produtions 2023
-      <a href="http://www.instagram.com/urbanlegendphelps">
-         <i class="fa fa-instagram"></i>
-      </a>
-      
-      <a href="http://www.youtube.com/@WTTJ">
-         <i class="fa fa-youtube"></i>
-      </a>
-
-      <a href="http://www.twitter.com/@kylephelps92">
-         <i class="fa fa-twitter"></i>
-      </a>
-
-      <a href="http://www.facebook.com/ThePhelps">
-         <i class="fa fa-facebook-square"></i>
-      </a>
-
-      <a href="mailto:wttjshow@gmail.com">
-         <i class="fa fa-envelope"></i> 
-      </a>
-   </footer>
-   <script>
-      $(document).ready(function() {
-         $(".fancybox").fancybox();
-      });
-   </script>  
+  <script>
+    $(document).ready(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
 </body>
 </html>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger-menu");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+  });
+</script>
+<script>document.addEventListener("DOMContentLoaded", () => {
+  // Add a "loaded" class to the body after 2 seconds
+  setTimeout(() => {
+    document.body.classList.add("loaded");
+  }, 2000); // Adjust time as needed
+});</script>
